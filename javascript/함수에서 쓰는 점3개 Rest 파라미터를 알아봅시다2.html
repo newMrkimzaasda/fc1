@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div></div>
+
+		<script>
+			//arguments
+			function 함수(a, b, c) {
+				for (let i = 0; i < arguments.length; i++) {
+					console.log(arguments[i]);
+				}
+			}
+			함수(2, 3, 4);
+			//...rest
+			function 함수2(a, b, ...rest) {
+				console.log(...rest);
+			}
+			함수2(1, 2, 3, 4, 45, 5, 7, 4);
+
+			function 함수3(...rest1) {
+				// function 함수3(...rest1, a, b ) { X // ...rest는 마지막에 써야 함.
+				// console.log(rest1[0]);
+				// console.log(rest1[1]);
+				// console.log(rest1[2]);
+				for (let i = 0; i < rest1.length; i++) {
+					console.log(rest1[i]);
+				}
+			}
+			함수3(1, 2, 3, 4, 45, 5, 7, 4);
+
+			var a = [1, 2, 3];
+			var b = "김밥";
+			var c = [...b, ...a];
+			console.log(c);
+
+			var a = [1, 2, 3];
+			var b = ["you", "are"];
+			var c = function (a, b) {
+				console.log([[...a], ...[...b]][1]);
+			};
+			c(a, b);
+
+			function 함수(a = 5, b = a * 2) {
+				console.log(a + b);
+				return 10;
+			}
+			함수(3);
+
+			function 함수(a = 5, b = a * 2) {
+				console.log(a + b);
+			}
+			함수(undefined, undefined);
+
+			function 어레이(...문자) {
+				return [...문자];
+			}
+			var newArray = 어레이(1, 2, 3, 4, 5);
+			console.log(newArray);
+
+			var numbers = [2, 3, 4, 5, 6, 1, 3, 2, 5, 5, 4, 6, 7];
+			console.log(Math.max(...numbers));
+
+			// console.log( ['b', 'c', 'a'].sort() );
+			//['a', 'b', 'c'] 출력됨
+
+			function 정렬(글자) {
+				console.log(...[...글자].sort());
+			}
+			정렬("bear");
+
+			// 글자세기('aacbbb') 라고 입력하면 콘솔창에
+			// { a : 2, b : 3, c : 1 }
+
+			function 글자세기(str) {
+				console.log([...str].sort());
+				var result = {};
+				[...str].forEach(function (a) {
+					if (result[a] > 0) {
+						result[a]++;
+					} else {
+						result[a] = 1;
+					}
+				});
+				console.log(result);
+			}
+			글자세기("aadddddddcbbb");
+
+			function 글자(...res) {
+				글자("aadddddddcbbb");
+			}
+			//
+
+			// var 학생1 = { name: "Kim", age: 20 };
+			// var 학생2 = { name: "Park", age: 21 };
+			// var 학생3 = { name: "Lee", age: 22 };
+
+			function Student(name, age) {
+				this.name = name;
+				this.age = age;
+				this.sayHi = function () {
+					console.log("안녕 나는 " + this.name + " 이야");
+				};
+			}
+
+			var 학생1 = new Student("Kim", 20);
+			var 학생2 = new Student("Park", 21);
+			var 학생3 = new Student("Lee", 22);
+
+			//
+		</script>
+	</body>
+</html>

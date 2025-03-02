@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>  	
+    
+
+
+    function 기계(이름){  
+      this.name = 이름;
+      this.age = 15;
+      this.sayHi = function(){
+        console.log('안녕하세요.'+ this.name + '입니다.')        
+      }
+    }
+
+
+    기계.prototype.gender='남';
+    //.toString() > 글자로 변경
+    //내장함수를 왜 쓸수 있을까요?
+
+    var 학생1 = new 기계('Park');
+    var 학생2 = new 기계('Kim');
+
+
+
+    var arr = [1,2,3];
+    var arr = new Array(1,2,3);
+
+    var obj = {name: 'Kim'};
+    // var obj = new Objcet();
+
+    // prototype은 constructor 함수에만 생긴다.
+    // 부모님의 유전자를 검사하고 싶으면 __proto__를 쓰세요.
+
+
+    var 부모 = {name: 'kim'};
+    var 자식 = {};
+    자식.__proto__ = 부모;
+    자식.name;
+
+
+
+    
+
+
+
+
+
+
+	</script> 
+	
+	
+</body>
+</html>
+

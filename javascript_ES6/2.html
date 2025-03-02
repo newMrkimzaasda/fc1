@@ -1,0 +1,66 @@
+<template>
+	<div>
+		<nav class="navbar navbar-expand-lg bg-body-tertiary">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#">MKSW</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+					<div class="navbar-nav">
+						<a class="nav-link active" aria-current="page" href="#">Home</a>
+						<a class="nav-link" href="#">Features</a>
+						<a class="nav-link" href="#">Pricing</a>
+						<a class="nav-link disabled" aria-disabled="true">Disabled</a>
+					</div>
+				</div>
+			</div>	
+		</nav>	
+		
+		<div clas="link-wrap">
+			<router-link class="aLink" to="/">홈페이지</router-link>	
+			<router-link to="/list">리스트페이지</router-link>		
+		</div>
+	
+		<router-view :BlogPs="Blogs"></router-view>
+	
+		<!-- <Home /> -->
+		<!-- <List :BlogPs = "Blogs" /> -->
+		<!-- <Detail /> -->
+	</div>
+	</template>
+	
+	<script>
+	import blog from './assets/Blog.js'
+	// import Home from './components/Home.vue';
+	// import List from './components/List.vue';
+	// import Detail from './components/Detail.vue';
+	
+	
+	export default {
+		name: 'App',
+		data(){
+			return{			
+				Blogs : blog,
+			}
+		}, 
+		components: {
+			// List : List,
+			// Home : Home,
+			// Detail : Detail,
+		},
+	}
+	</script>
+	<style>
+	#app {
+		font-family: Avenir, Helvetica, Arial, sans-serif;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		text-align: center;
+		color: #2c3e50;	
+	}
+	#app a{margin-bottom:1rem;
+		/* display:flex;justify-content:center;flex-flow:wrap row; */
+		& + &{margin-left:1rem}
+	}
+	</style>

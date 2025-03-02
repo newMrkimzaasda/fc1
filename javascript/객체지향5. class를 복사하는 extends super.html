@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			// 유사한 class를 하나 더 만들고 싶으면? extends
+			class 할아버지 {
+				constructor(name) {
+					this.성 = 'Kim';
+					this.이름 = name;
+				}
+			}
+
+			var 할아버지1 = new 할아버지('만덕');
+
+			class 아버지 extends 할아버지 {
+				constructor() {
+					super();
+					this.나이 = 50;
+				}
+			}
+			var 아버지1 = new 아버지('만수');
+		</script>
+	</body>
+</html>

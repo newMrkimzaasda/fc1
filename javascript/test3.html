@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <title>Document</title>
+  <style>
+    *{
+        padding:0;
+        margin:0;
+    }
+    .wrap{
+        width: 100%;
+    }
+    .line{
+        width: 500px;
+        height:auto;
+    }
+    .line path{
+        fill:none;
+        stroke:pink;
+        stroke-width:1;
+        stroke-dasharray: 1136;
+        stroke-dashoffset: 0;
+        animation-name:dashline;
+        animation-duration:3s;
+    }
+
+    /* svg animation */
+    @keyframes dashline {
+        0%{stroke-dashoffset: 1136;}
+        100%{stroke-dashoffset: 0;}
+        
+    }
+</style>
+</head>
+<body>
+
+  <div class="wrap">
+    <svg class="line" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 325.32 417.72" style="enable-background:new 0 0 325.32 417.72;" xml:space="preserve">
+    <path class="st0" d="M41.77,24.05c0,0,167.09-46.84,215.19,30.38s48.1,169.62-30.38,201.27S66.31,216.55,72.15,184.81c8.86-48.1,89.87-70.89,136.71-43.04s70.78,65.66,79.75,121.52c3.46,21.58-29.11,130.38-83.54,130.38"/>
+    </svg>
+</div>
+
+<!-- query -->
+<script>
+    $(function(){
+        $('.line').find('path').each(function(i,path){
+            var length = path.getTotalLength();
+            // alert(length);
+        });
+    });
+</script>
+</body>
+</html>

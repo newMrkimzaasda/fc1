@@ -1,0 +1,67 @@
+<!-- 문법을 어디를 쓸지를 생각을 잘해라. -->
+<!doctype html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+		<link rel="stylesheet" href="main.css" />
+	</head>
+	<body>
+		<div>
+			<img id="test" src="https://codingapple1.github.io/kona.jpg" />
+		</div>
+		<script>
+			// var 프로미스 = new Promise(ajax해주는함수(url){
+			// });
+			// function 함수(a, b, c) {
+			// 	// console.log(a);
+			// 	// console.log(b);
+			// 	// console.log(c);
+			// 	for (var i = 0; i < arguments.length; i++) {
+			// 		console.log(arguments[i]);
+			// 	}
+			// }
+			// 함수(1, 2, 3);
+
+			// var 함수 = function (a, b, c) {
+			// 	for (var i = 0; i < arguments.length; i++) {
+			// 		console.log(arguments[i]);
+			// 	}
+			// };
+			// 함수(5, 4, 3);
+
+			// function 함수2(...rest) {
+			// 	for (var i = 0; i < rest.length; i++) {
+			// 		console.log(rest[i]);
+			// 	}
+			// }
+			// 함수2(12, 3, 4, 5, 6, 7);
+
+			// var pants = 0;
+			// var socks = 100;
+			// `바지${pants} 양말${socks}`;
+
+			// function 해체분석기(문자, 변수1, 변수2) {
+			// 	if (변수1 == 0) {
+			// 		alert(`바지다팔였어요 양말${변수2}`);
+			// 	}
+			// }
+			// 해체분석기`바지${pants} 양말${socks}`;
+
+			//스프레드 오퍼레이터 spread operator
+			var arr = ["hello", "world"];
+			console.log(...arr);
+			var 문자 = "hello";
+			console.log(...문자);
+			console.log(문자);
+
+			var aa = [1, 2, 3];
+			var bb = [4, 5];
+			console.log([...aa, ...bb]);
+		</script>
+	</body>
+</html>
+
+v-for

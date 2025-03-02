@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div></div>
+
+		<script>
+			// var 변수 = '손흥민';
+			// var 문자 = `안녕하세요. ${변수} 입니다.`;
+
+			// function 해체분석기(문자들, 변수들){
+			//   console.log(문자들);
+			//   console.log(변수들);
+			// }
+			// 해체분석기`안녕하세요. ${변수} 입니다.`
+
+			//  스프레드 오퍼레이터
+			//  > 대괄호, 중괄호, 함수소괄호
+			//  레퍼레이션 데이터 타입
+			//  [arry, Object] > 값을 공유한다.
+
+			var num = [10, 20, 30];
+			function 더하기(a, b, c) {
+				console.log(a + b + c);
+			}
+			더하기(...num);
+
+			var person = {
+				인사: function () {
+					console.log(this.name + "안녕");
+				},
+			};
+			var person2 = {
+				name: "손흥민",
+			};
+
+			person.인사.apply(person2);
+			person.인사.call(person2);
+
+			function 더하기(a, b, c) {
+				console.log(a + b + c);
+			}
+			var 에레이 = [10, 20, 30];
+			더하기(에레이[0], 어레이[1], 어레이[2]);
+
+			더하기.apply(undefined, 어레이);
+			더히가(...어레이);
+		</script>
+	</body>
+</html>

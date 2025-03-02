@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <div style="display : none">모달창0</div>
+  <div style="display : none">모달창1</div>
+  <div style="display : none">모달창2</div>
+  
+  <button>버튼0</button>
+  <button>버튼1</button>
+  <button>버튼2</button>
+
+
+  <script>
+
+
+  var 버튼들 = document.querySelectorAll('button');
+  var 모달창들 = document.querySelectorAll('div');
+
+  for(let i=0; i<3; i++){
+    버튼들[i].addEventListener('click', function(){      
+      모달창들[0].style.display = 'none';      
+      모달창들[1].style.display = 'none';      
+      모달창들[2].style.display = 'none';      
+      모달창들[i].style.display = 'block';
+    });
+  }
+  
+
+
+
+
+
+
+    // for(i=0; i)
+    // 함수();
+    // function 함수() {
+    //   console.log(안녕);
+    //   let 안녕 = 'Hello!';
+    // } 
+    // let, const > undefined 할당을 하지 못함.
+    // temporal deadzone / uninitialized
+
+    
+
+    
+    // var 함수 = function() {
+    //   console.log(안녕);
+    //   var 안녕 = 'Hello!';
+    // } 
+    // 함수();
+
+
+    // var 함수
+    // 함수();
+    // 함수 = function() {
+    //   console.log(안녕);
+    //   var 안녕 = 'Hello!';
+    // } 
+
+    
+
+    // let a = 1;
+    // var b = 2;
+    // window.a = 3;
+    // window.b = 4;
+    // console.log(a + b);
+
+    //  let a =1, window.b=3 전역변수보다 나보다 가까운곳에서 있는 변수를 사용한다.
+
+
+    // for(var i=1; i<6; i++){
+    //   setTimeout(function() { console.log(i); }, 1000 );     
+    // }    
+
+
+
+
+
+  </script>  
+</body>
+</html>
+

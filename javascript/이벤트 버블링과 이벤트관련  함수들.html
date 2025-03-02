@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div class="black-bg">
+			<div class="white-bg">모달창 내용</div>
+		</div>
+
+		<script>
+			document.querySelector(".black-bg").addEventListener("click", function () {
+				document.querySelector(".black-bg").classList.remove("show-modal");
+			});
+
+				document.querySelector(".black-bg").addEventListener("click", function () {
+					console.log(e.target)
+					//내가 실제로 누른거
+					if(e.target == document.querySelector(".black-bg"))
+			});
+
+			document.querySelector(".black-bg").addEventListener("click", function (e) {
+				e.target; //유저가 실제로 누른거
+				console.log(e.target);
+				e.currentTarget; // 이벤트리스트 달린곳(this)
+				e.preventDefault(); // 이벤트 기본동작 막아줌. submit 안된거 같이
+				e.stopPropagation(); //
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="main.css">	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+	<div class="black-bg">
+		<div class="white-bg">
+			<h4>로그인하세요</h4>			
+			<form action="success.html" id="formWrap">
+				<div class="my-3">
+					<input type="text" class="form-control" id="email">
+				</div>
+				<div class="my-3">
+					<input type="password" class="form-control" id="pass">
+				</div>
+				<button type="submit" class="btn btn-primary" id="send">전송</button>
+				<button type="button" class="btn btn-danger" id="close">닫기</button>
+			</form>			
+		</div>
+	</div>  
+
+	<nav class="navbar navbar-light bg-light">
+		<div class="container-fluid">
+			<span class="navbar-brand">Navbar</span>
+      <span class="badge bg-dark"><span>Dark</span> 🔄</span>
+			<button class="navbar-toggler" type="button">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+		</div>
+	</nav>
+
+  <script>
+    /*
+    var 이름 = 'kim';
+    let 나이 = 26;
+    const 주소 = '양주시';
+    let 이름 재선언 불가
+    const 재선언, 재할당 불가
+    */
+
+
+    //클릭횟수가 홀수면 LIGHT
+    //클릭횟수가 짝수면 DARK
+    // 기억을 담아둘 변수 생성
+    //var 나이 = 변수에 넣을값 , 잠깐 보관하는 값
+    
+    var count = 0;
+    $('.badge').on('click',function(){
+      count++;
+      console.log(count);
+      if( count % 2 == 1){
+        $('.bg-dark > span').text('Light');
+        $('body').attr('style','background-color:#000');
+      }else if(count % 2 == 0){
+        $('.bg-dark > span').text('Dark');
+        $('body').attr('style','background-color:#fff');
+      }
+    })
+
+
+  </script>
+
+	<ul class="list-group">
+		<li class="list-group-item">An item</li>
+		<li class="list-group-item">A second item</li>
+		<li class="list-group-item">A third item</li>
+		<li class="list-group-item">A fourth item</li>
+		<li class="list-group-item">And a fifth one</li>
+	</ul>
+
+
+	<button id="login">로그인</button>
+  <input type="number" id="ck">	
+</body>
+<!-- <script>
+	document.getElementById('formWrap').addEventListener('submit',function(e){
+		if(document.getElementById('email').value == '' && document.getElementById('pass').value == ''){
+			alert('아이디 / 패스워드를 입력해 주세요.');
+			e.preventDefault();
+		}else	if(document.getElementById('email').value == ''){
+			alert('아이디를 입력해 주세요.');
+			e.preventDefault();
+		}else if(document.getElementById('pass').value == ''){
+			alert('비번을 입력해 주세요.');
+			e.preventDefault();
+		}else if(document.getElementById('pass').value.length < 6){
+			alert('비번을 넘 짧음.');
+			e.preventDefault();
+		}
+	})		
+</script> -->
+<script>
+	$('#login').on('click', function () {
+		$('.black-bg').addClass('show-modal');
+		// $('.black-bg').show();
+	})
+	$('#close').on('click', function () {
+		$('.black-bg').removeClass('show-modal');
+		// $('.black-bg').hide();
+	})
+	$('.navbar-toggler').on('click', function () {
+		$('.list-group').toggleClass('show');
+	})	
+</script>
+<script>
+
+  document.getElementById("ck").addEventListener('change',function(){      
+      if( document.getElementById('ck').value >= 0 && document.getElementById('ck').value <= 100){
+        alert('장나치치 말자');
+      }    
+  })
+
+  function okPoint(a, b){      
+    if( a + b > 120 && a >= 40 && b >= 40){
+      console.log('합격');
+    }else if(a < 40 || b < 40){
+      console.log('불합격');
+    }else{
+      console.log('불합격');
+    }
+  }
+
+  okPoint(70, 70);
+  okPoint(30, 100);
+  okPoint(50, 50);
+
+  function n3(num){
+    if(num % 3 == 0){
+      console.log('박수')
+    }else{
+      console.log('통과')
+    }
+  }
+
+  n3(15);
+
+
+  function n6911(n){
+    //n == 6 이면 박수
+    if(n % 6 == 0){
+      console.log('박수');
+    }else if( n % 9 == 0){
+      console.log('박수', '박수');
+    }else if(n % 11 == 1){
+      console.log('통과');
+    }
+    //n == 9 이면 박수X2
+
+    //n == 11 이면 통과
+  }
+
+//input, change
+document.getElementById('formWrap').addEventListener('submit',function(e){
+  if(document.getElementById('email').value == '' && document.getElementById('pass').value == ''){
+    alert('아이디 / 패스워드를 입력해 주세요.');
+    e.preventDefault();
+  }else	if(document.getElementById('email').value == ''){
+    alert('아이디를 입력해 주세요.');
+    e.preventDefault();
+  }else if(document.getElementById('pass').value == ''){
+    alert('비번을 입력해 주세요.');
+    e.preventDefault();
+  }else if(document.getElementById('pass').value.length < 6 ){
+    alert('비번을 넘 짧음.');
+    e.preventDefault();
+  }
+})	
+</script>
+
+
+<!--
+<script>
+document.getElementById('formWrap').addEventListener('submit',function(e){
+  if(document.getElementById('email').value == '' && document.getElementById('pass').value == ''){
+    alert('아이디 / 패스워드를 입력해 주세요.');
+    e.preventDefault();
+  }else	if(document.getElementById('email').value == ''){
+    alert('아이디를 입력해 주세요.');
+    e.preventDefault();
+  }else if(document.getElementById('pass').value == ''){
+    alert('비번을 입력해 주세요.');
+    e.preventDefault();
+  }else if(document.getElementById('pass').value.length < 6){
+    alert('비번을 넘 짧음.');
+    e.preventDefault();
+  }
+})		
+</script>
+-->
+</html>

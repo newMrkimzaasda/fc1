@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			// var 학생1 = { name: "Kim", age: 15 };
+
+			// function 기계(이름) {
+			// 	this.name = 이름; // this는 새로생성되는 object를 뜻함.
+			// 	this.age = 15;
+			// 	this.sayHi = function () {
+			// 		console.log("안녕하세요. " + this.name + " 입니다.");
+			// 	};
+			// }
+
+			// // 학생1.sayHi();
+			// // 학생2.sayHi();
+			// var 학생1 = new 기계("김");
+			// var 학생2 = new 기계("박");
+
+			// //
+			// var product1 = { name: "shirts", price: 50000 };
+			// var product2 = { name: "pants", price: 60000 };
+
+			var product1 = { name: "shirts", price: 5000 };
+			var product2 = { name: "pants", price: 6000 };
+
+			function 기계(name, price) {
+				this.name = name;
+				this.price = price;
+				this.vat = function () {
+					console.log(price * 0.1);
+				};
+			}
+
+			var prd1 = new 기계("shirts", 50000);
+			var prd2 = new 기계("pants", 60000);
+			//
+		</script>
+	</body>
+</html>

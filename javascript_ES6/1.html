@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+	<script src="https://code.jquery.com/jquery-3.7.1.js" integrity=1"sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<div class="card-group container">
+		<div class="card">
+			<img src="https://via.placeholder.com/600">
+			<div class="card-body">
+				<h5 id="t1">Card title</h5>
+				<p id="p1">가격 : 70000</p>
+				<button class="btn btn-danger">주문하기</button>
+			</div>
+		</div>
+		<div class="card">
+			<img src="https://via.placeholder.com/600">
+			<div class="card-body">
+				<h5 id="t2">Card title</h5>
+				<p id="p2">가격 : 70000</p>
+				<button class="btn btn-danger">주문하기</button>
+			</div>
+		</div>
+		<div class="card">
+			<img src="https://via.placeholder.com/600">
+			<div class="card-body">
+				<h5 id="t3">Card title</h5>
+				<p id="p3">가격 : 70000</p>
+				<button class="btn btn-danger">주문하기</button>
+			</div>
+		</div>
+	</div>
+	<script>		
+		var products = [
+			{ id: 0, price: 70000, title: 'Blossom Dress' },
+			{ id: 1, price: 50000, title: 'Springfield Shirt' },
+			{ id: 2, price: 60000, title: 'Black Monastery' }
+		];
+
+		var a = '안녕'
+		`문자${a}문자`
+		console.log(`문자${a}문자`)
+
+		// document.querySelector('#t1').innerHTML=products[0]['title'];		
+		$('#t1').html(products[0]['title'])
+		$('.card-bod h5').eq(0).html(products[0]['title'])
+		
+		
+		//document.querySelector('#p1').innerHTML=products[0]['price'] + ' 원';
+
+
+
+		// document.querySelector('#t1').innerHTML=products[0].title;
+		// document.querySelector('#p1').innerHTML=products[0].id;		
+		// document.querySelector('#t1')[0].innerHTML= 'Blossom Dress'
+		// document.querySelectorAll('#t1').innerHTML=products[0].title('Blossom Dress');
+
+
+
+
+	</script> 
+
+
+
+</body>
+</html>

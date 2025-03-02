@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+	<div class="alert-box" id="alert">
+		<p id="alert-txt" class="title">알람창임1</p>
+		<button type="button" id="close">닫기</button>
+		<!-- <button type="button" id="close" onclick="closeAlert()">닫기</button> -->
+	</div>
+	<button id="id" onclick="idPass('아이디를 입력해 주세요', 'block')">아이디</button>
+	<button id="pass" onclick="idPass('비밀번호를 입력해 주세요', 'block')">비밀번호</button>
+</body>
+
+<script>
+	//mouseover, ...  콜백함수	
+	document.getElementById('close').addEventListener('mouseover', function() {
+		document.getElementById('alert').style.display = "none";
+		// $('#alert').hide();
+	});
+
+	function idPass(a, b) {
+		// document.getElementById('alert-txt').innerHTML = a;
+		document.getElementsByClassName('title')[0].innerHTML = a;
+		document.getElementById('alert').style.display = b;
+	}
+
+	/*
+		var id = "아이디를 입력해 주세요.";
+		var pass = "비밀번호를 입력해 주세요.";
+	
+		function closeAlert(){
+			document.getElementById('alert').style.display = "none";
+		}
+	
+		function idAlert(){
+			document.getElementById('alert-txt').innerHTML = id;
+			document.getElementById('alert').style.display = "block"
+		}
+	
+		function passAert(){
+			document.getElementById('alert-txt').innerHTML = pass;
+			document.getElementById('alert').style.display = "block"
+		}
+	 */
+
+	// function idAlert(){
+	//   document.getElementById('id').function(){click, addEventListener
+	//     document.getElementById('alert').style.display = 'block';
+	//   }
+	// }
+
+</script>
+
+</html>
+<!-- 함수 
+ // 긴 코드를 축약하기 위해 씀.
+-->

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<title>Document</title>
+</head>
+<body>	
+	<div class="container">
+		<div class="row">			
+		</div>
+		<button class="btn btn-danger" id="more">더보기</button>	
+	</div>
+	
+	<script>
+		var products = [
+			{ id : 0, price : 70000, title : 'Blossom Dress' },
+			{ id : 1, price : 50000, title : 'Springfield Shirt' },
+			{ id : 2, price : 60000, title : 'Black Monastery' }
+		];
+
+		//https://codingapple1.github.io/js/more1.json    
+		// 더보기 누르면 데이터 받아오기
+		count = 0;
+		$('#more').click(function(){			 			
+			count++; console.log(count);	
+
+			// function moreBtn(){
+				// data.forEach((a,i) =>{
+				// 	var cardList = 
+				// 	`<div class="col-sm-4">
+				// 		<img src="https://via.placeholder.com/600" class="w-100">
+				// 		<h5>${data[i].title}</h5>
+				// 		<p>가격 : ${data[i].price}</p>
+				// 	</div>`;
+				// 	$('.row').append(cardList);   
+				// })
+			// }
+			if(count == 1){
+				$.get('https://codingapple1.github.io/js/more1.json')
+					.done((data) => {
+						console.log(data);					
+						// s: 카드레이아웃 코드 생성						
+						data.forEach((a,i) =>{
+							var cardList = 
+							`<div class="col-sm-4">
+								<img src="https://via.placeholder.com/600" class="w-100">
+								<h5>${data[i].title}</h5>
+								<p>가격 : ${data[i].price}</p>
+							</div>`;
+							$('.row').append(cardList);   
+						})
+						// e: 카드레이아웃 코드 생성
+					}).fail(function(data){
+						console.log('실패함.')
+				})			
+			}
+			
+			if( count == 2){
+				$.get('https://codingapple1.github.io/js/more2.json')
+				.done((data1) => {
+					console.log(data1);					
+					// s: 카드레이아웃 코드 생성
+					data1.forEach((a,i) =>{
+						var cardList = 
+						`<div class="col-sm-4">
+							<img src="https://via.placeholder.com/600" class="w-100">
+							<h5>${data1[i].title}</h5>
+							<p>가격 : ${data1[i].price}</p>
+						</div>`;
+						$('.row').append(cardList);   
+					})
+					// e: 카드레이아웃 코드 생성
+				}).fail(function(data1){
+					console.log('실패함.')
+				})
+			}
+			if( count >= 3){
+				alert('더이상 상품이 없습니다.');
+				$('#more').attr('disabled','disabled')
+			}
+		})
+
+	
+
+			// products.forEach((a,i) =>{
+			// 	var cardList = 
+			// 	`<div class="col-sm-4">
+			// 		<img scr="https://via.placeholder.com/600" class="w-100">
+			// 		<h5>${products[i].title}</h5>
+			// 		<p>가격 : ${products[i].price}</p>
+			// 	</div>`;
+			// 	$('.row').append(cardList);     
+			// })
+
+		products.forEach((a,i) =>{
+			var cardList = 
+			`<div class="col-sm-4">
+				<img scr="https://via.placeholder.com/600" class="w-100">
+				<h5>${products[i].title}</h5>
+				<p>가격 : ${products[i].price}</p>
+			</div>`;
+			$('.row').append(cardList);     
+		})
+
+
+		
+
+
+		// 어떤데이트를 URL 요청
+		// GET인지 POST 인지 잘 기재해야 데이터줌
+		// get요청
+		// post요청 > form action ='./sdflkjsl' method="post"
+		// get/post 새로고침됨 
+		// ajax가 뭐가 좋으냐면 새로고침없이 get,post 요청하는 기능
+		
+		// jQuery 받기
+		// $.get('https://codingapple1.github.io/hello.txt').done(function(date){
+		//   console.log(date);
+		// }).fail(function(date){
+		//   console.log('실패함.')
+		// });
+
+		// jQuery 받기
+		// $.get('https://codingapple1.github.io/price.json')
+		// .done(function(date){
+		//   console.log(date.price);
+		// }).fail(function(date){
+		//   console.log('실패함.')
+		// })
+
+		// javascript 받기
+		// fetch('https://codingapple1.github.io/price.json')
+		// .then(res => res.json()) /*ck*/
+		// .then(data => {
+		//   console.log(data.price)
+		// })
+		// .catch(errow => {
+		//   console.log(error)
+		// }) 
+		// *ck
+		// 데이터를 주고 받을때 문자만 주고 받음.
+		// > array, object를 주고 받을수 없음.
+		// > object, array 모두 따움표를 붙인다. > "{"": 5000}"
+		// > json > array, object 로 바꿔주는 기능
+		// axios 라이브러리 > ajax 편하게 쓰고 싶을때 씀.    
+
+		// 보내기
+		// $.post('https://codingapple1.github.io/hello.txt',{name: 'kim'}).done(function(date){
+		//   console.log(date);
+		// }).fail(function(){
+		//   console.log('실패함.')
+		// })
+
+	</script> 
+	<!-- <script src="js102.js"></script>	 -->
+</body>
+</html>

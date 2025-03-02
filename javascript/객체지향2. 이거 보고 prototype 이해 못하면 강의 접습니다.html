@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			var 학생1 = { name: "Kim", age: 20 };
+			var 학생2 = { name: "Park", age: 21 };
+			var 학생3 = { name: "Lee", age: 22 };
+
+			function Student(name, age) {
+				this.names = name;
+				this.ages = age;
+				this.sayHi = function () {
+					console.log("안녕" + this.names + "이야");
+				};
+			}
+			var 학생1 = new Student("kim", 20);
+			var 학생2 = new Student("Park", 21);
+			var 학생3 = new Student("Lee", 22);
+		</script>
+	</body>
+</html>

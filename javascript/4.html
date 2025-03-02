@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+	<div class="alert-box" id="alert">알람창임1
+		<button onclick="onOff('none', 'alert')">닫기</button>
+	</div>
+	<button onclick="onOff('block', 'alert')">버튼</button>
+
+</body>
+
+<script>
+  //예시1
+	function onOff(a, b) {
+		document.getElementById(b).style.display = a;
+		// $('#alert').attr('style','display:block');
+	};
+
+  //예시2
+  function plus(a){
+    2 + a
+  }
+  plus(a);
+
+  function plus(){
+    2 + 1
+  }
+  function plus1(){
+    2 + 2
+  }
+  function plus2(){
+    2 + 2
+  }
+</script>
+
+</html>
+<!-- 함수 
+ // 긴 코드를 축약하기 위해 씀.
+-->

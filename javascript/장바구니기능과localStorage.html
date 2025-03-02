@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<title>Document</title>
+</head>
+<body>	
+	<div class="container">
+		<div class="row">			
+		</div>
+		<!-- <button class="btn btn-danger" id="more">더보기</button>	
+		<button class="btn btn-danger" id="lPrice">가격낮은순</button>	
+		<button class="btn btn-danger" id="hPrice">가격높은순</button>
+		<button class="btn btn-danger" id="labc">가나다</button>	
+		<button class="btn btn-danger" id="habc">가나다역순</button>	
+		<button class="btn btn-danger" id="filter">6만원이하</button>	 -->
+	</div>
+	
+	<script>
+		var products = [
+			{ id : 0, price : 70000, title : 'Blossom Dress' },
+			{ id : 1, price : 50000, title : 'Springfield Shirt' },
+			{ id : 2, price : 60000, title : 'Black Monastery' }
+		];
+
+    //localstorage 5mb
+
+
+    products.forEach((a,i) =>{
+      var cardList = 
+      `<div class="col-sm-4">
+        <img src="https://via.placeholder.com/600" class="w-100">
+        <h5>${products[i].title}</h5>
+        <p>가격 : ${products[i].price}</p>
+        <button class="buy">구매</button>
+      </div>`;
+      $('.row').append(cardList);     
+    })
+
+    // 문자, 숫자
+    localStorage.setItem('이름','kim');
+    localStorage.getItem('이름');
+    localStorage.removeItem('이름');
+
+    //array
+    var arr = [1,2,3];
+    var newArr = JSON.stringify(arr); // arry/object -> JSON 
+    // localStorage.setItem('num',[1,2,3]);
+    localStorage.setItem('num',newArr);
+    var 꺼낸거 = localStorage.getItem('num');    
+    console.log(JSON.parse(꺼낸거)[0]); // JSON -> array/object
+
+    // sessionStorage.setItem('num',[1,2,3]);    
+    sessionStorage.setItem('num',newArr);    
+    var 꺼낸거 = sessionStorage.getItem('num');    
+    console.log(JSON.parse(꺼낸거)[0]); // JSON -> array/object
+
+    //수정하려면
+    // 1.자료를꺼냄, 2.꺼낸자료를수정함, 3.다시넣음.
+    // 로컬스토리자료수정
+    // 1. 구매버튼누르면 2. 지금 누른버튼 외외 글자를 가져와서 3. localstorage 예 [글자] 지정
+    
+    $('.buy').click(function(e){
+      var title = $(e.target).siblings('h5').text();      
+      if(localStorage.getItem('cart') != null){        
+        var 꺼낸거1 = JSON.parse(localStorage.cart);
+        console.log(꺼낸거1);
+        꺼낸거1.push(title);
+        console.log(꺼낸거1);
+        localStorage.setItem('cart',JSON.stringify(꺼낸거1));
+      }else{
+        localStorage.setItem('cart',JSON.stringify([title]));
+      }
+      
+      // javasrcipt
+      // e.target.previousElementSibling.previousElementSibling
+    })
+    
+	
+	</script> 	
+</body>
+</html>

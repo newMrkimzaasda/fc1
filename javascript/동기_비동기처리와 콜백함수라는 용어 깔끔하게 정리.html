@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	</head>
+	<body>
+		<!-- <img id="test" src="https://codingapple1.github.io/kona.jpg" /> -->
+		<custom-input></custom-input>
+		<script>
+			var 이미지로드 = new Promise(function (s, r) {
+				var img = document.querySelector("#test");
+				img.addEventListener("load", function () {
+					s();
+				});
+				img.addEventListener("error", function () {
+					r();
+				});
+			});
+
+			이미지로드
+				.then(function () {
+					console.log("성공");
+				})
+				.catch(function () {
+					console.log("실패");
+				});
+
+			//arguments
+			function 함수(a, b, c) {
+				for (let i = 0; i < arguments.length; i++) {
+					console.log(arguments[i]);
+				}
+			}
+			함수(2, 3, 4);
+			//...rest
+			function 함수2(a, b, ...rest) {
+				console.log(...rest);
+			}
+			함수2(1, 2, 3, 4, 45, 5, 7, 4);
+
+			function 함수3(...rest1) {
+				// function 함수3(...rest1, a, b ) { X // ...rest는 마지막에 써야 함.
+				// console.log(rest1[0]);
+				// console.log(rest1[1]);
+				// console.log(rest1[2]);
+				for (let i = 0; i < rest1.length; i++) {
+					console.log(rest1[i]);
+				}
+			}
+			함수3(1, 2, 3, 4, 45, 5, 7, 4);
+
+			var a = [1, 2, 3];
+			var b = "김밥";
+			var c = [...b, ...a];
+			console.log(c);
+
+			var a = [1, 2, 3];
+			var b = ["you", "are"];
+			var c = function (a, b) {
+				console.log([[...a], ...[...b]][1]);
+			};
+			c(a, b);
+
+			function 함수(a = 5, b = a * 2) {
+				console.log(a + b);
+				return 10;
+			}
+			함수(3);
+
+			function 함수(a = 5, b = a * 2) {
+				console.log(a + b);
+			}
+			함수(undefined, undefined);
+
+			function 어레이(...문자) {
+				return [...문자];
+			}
+			var newArray = 어레이(1, 2, 3, 4, 5);
+			console.log(newArray);
+
+			var numbers = [2, 3, 4, 5, 6, 1, 3, 2, 5, 5, 4, 6, 7];
+			console.log(Math.max(...numbers));
+
+			// console.log( ['b', 'c', 'a'].sort() );
+			//['a', 'b', 'c'] 출력됨
+
+			function 정렬(글자) {
+				console.log(...[...글자].sort());
+			}
+			정렬("bear");
+
+			// 글자세기('aacbbb') 라고 입력하면 콘솔창에
+			// { a : 2, b : 3, c : 1 }
+
+			function 글자세기(str) {
+				console.log([...str].sort());
+				var result = {};
+				[...str].forEach(function (a) {
+					if (result[a] > 0) {
+						result[a]++;
+					} else {
+						result[a] = 1;
+					}
+				});
+				console.log(result);
+			}
+			글자세기("aadddddddcbbb");
+
+			function 글자(...res) {
+				글자("aadddddddcbbb");
+			}
+			//
+
+			// var 학생1 = { name: "Kim", age: 20 };
+			// var 학생2 = { name: "Park", age: 21 };
+			// var 학생3 = { name: "Lee", age: 22 };
+
+			// function Student(name, age) {
+			// 	this.name = name;
+			// 	this.age = age;
+			// 	this.sayHi = function () {
+			// 		console.log("안녕 나는 " + this.name + " 이야");
+			// 	};
+			// }
+
+			// var 학생1 = new Student("Kim", 20);
+			// var 학생2 = new Student("Park", 21);
+			// var 학생3 = new Student("Lee", 22);
+
+			// //콜백함수
+			// function 첫째(a) {
+			// 	console.log(1);
+			// 	a();
+			// }
+			// function 둘째() {
+			// 	console.log(2);
+			// }
+			// 첫째(둘째);
+
+			// 일함수(a,b){
+			//      console.log(1);
+			//    }.then(function () {
+			// 		console.log(1);
+			// 	})
+			// 	.then(function () {
+			// 		console.log(1);
+			// 	})
+			// 	.catch(function () {
+			// 		console.log(1);
+			// 	});
+			//콜백함수 이것 실행했을때
+			//프로미스 샐행하고 ,실패했을때
+			// var 프로미스 = new Promise(function (성공, 실패) {
+			// 	console.log(1);
+			// 	어려운연산 = 10010 + 1000;
+			// 	성공(어려운연산);
+			// 	// 성공( 10 ); 성공결과를 아래까지 결과값을 넣을수 있음.
+			// 	//ajax,이벤트리스너, setTimeout
+			// });
+
+			// 프로미스
+			// 	.then(function (result) {
+			// 		console.log("ok", result);
+			// 	})
+			// 	.then(function () {
+			// 		console.log("ok");
+			// 	})
+			// 	.catch(function () {
+			// 		console.log("no");
+			// 	})
+			// 	.finally(function () {
+			// 		console.log("ㅋㅋㅋㅋㅋ");
+			// 	}); // 성공, 실패 일어났을때 실행해주세요.
+
+			// var imgLoadResult = new Promise(function (성공, 실패) {
+			// 	// setTimeout(function () {
+			// 	// 	console.log("1초후에 성공");
+			// 	성공();
+			// 	// }, 5000);
+			// });
+
+			// //$.ajax, fetch(),
+
+			// imgLoadResult
+			// 	.then(function () {
+			// 		console.log("성공했습니다.");
+			// 	})
+			// 	.catch(function () {
+			// 		console.log("실패했습니다.");
+			// 	})
+			// 	.finally(function () {
+			// 		console.log("ㅋㅋㅋㅋㅋ");
+			// 	}); // 성공, 실패 일어났을때 실행해주세요.
+
+			// var getText = new Promise(function (s, r) {
+			// 	//case 1
+			// 	$.ajax({
+			// 		type: "get",
+			// 		url: "https://codingapple1.github.io/hello.txt",
+			// 	})
+			// 		.done(function (결과) {
+			// 			console.log(결과);
+			// 			s();
+			// 		})
+			// 		.catch(function () {
+			// 			console.log("실패했습니다.");
+			// 		});
+
+			// 	//case 2
+			// 	$.get("https://codingapple1.github.io/hello.txt").done(function (결과) {
+			// 		console.log(결과);
+			// 		s();
+			// 	});
+			// });
+
+			// getText.then(function () {
+			// 	console.log("성공입니다.");
+			// });
+
+			//프로미스 성공,실패전 pending
+			//프로미스 성공 resolved,fulfilled
+			//프로미스 실패 rejected
+			//프로미스 결론 settled
+
+			//es8
+			//async 성공만 됨.
+			async function 더하기() {
+				// return Promise.reject('실패');
+				return 1 + 1;
+			}
+			더하기().then(function (결과) {
+				console.log("성공이예요11111", 결과);
+			});
+
+			var person = new Map();
+			person.set("name", "kim");
+			person.set("age", 20);
+
+			//
+			//
+			//
+
+			class 클래스 extends HTMLElement {
+				connectedCallback() {
+					document.createElement;
+					this.innerHTML = `<label for="a">이름을 입력하쇼</label><input id="a">`;
+				}
+			}
+			customElements.define("custom-input", 클래스);
+
+			//
+			//
+			//
+		</script>
+	</body>
+</html>

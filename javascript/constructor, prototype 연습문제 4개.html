@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>  	
+    
+
+
+    function 기계(이름){  
+      this.name = 이름;
+      this.age = 15;
+      this.sayHi = function(){
+        console.log('안녕하세요.'+ this.name + '입니다.')        
+      }
+    }
+
+
+    기계.prototype.gender='남';
+    //.toString() > 글자로 변경
+    //내장함수를 왜 쓸수 있을까요?
+
+    var 학생1 = new 기계('Park');
+    var 학생2 = new 기계('Kim');
+
+
+
+    var arr = [1,2,3];
+    var arr = new Array(1,2,3);
+
+    var obj = {name: 'Kim'};
+    // var obj = new Objcet();
+
+    // prototype은 constructor 함수에만 생긴다.
+    // 부모님의 유전자를 검사하고 싶으면 __proto__를 쓰세요.
+
+
+    var 부모 = {name: 'kim'};
+    var 자식 = {};
+    자식.__proto__ = 부모;
+    자식.name;
+
+
+    var 학생1 = { name : 'Kim', age : 20 }
+    var 학생2 = { name : 'Park', age : 21 }
+    var 학생3 = { name : 'Lee', age : 22 }
+
+
+    function 학생(이름, 나이){
+      this.name = 이름;
+      this.age = 나이;
+      this.sayHi = function(){
+        console.log('안녕 나는' + this.name + '이야')
+      }
+    }
+
+    var 학생1 = new 학생('Kim', 20)
+    var 학생2 = new 학생('Park', 21)
+    var 학생3 = new 학생('Lee', 22)
+
+    학생1.sayHi();
+    
+
+    // pop(), sort(), push(), slice()
+    // 필수 매개변수와 선택적 매개변수가 포함된 splice() 문법 
+    // Array.splice(start, deleteCount, newItem, newItem, newItem, ...)
+
+    //[요소하나만 삭제]
+    // let months = ["January", "February", "Monday", "Tuesday"];
+    // let days = months.splice(2, 1); // 요소 하나만 삭제
+    // console.log(days); // ["Monday"]
+    // console.log(months); // ["January", "February", "Tuesday"]
+
+    //[요소삭제후 추가]
+    // let months = ["January", "February", "Monday", "Tuesday"];
+    // let days = months.splice(2, 2, "March", "April"); // 요소 두 개를 제외하고, 다른 요소를 추가
+    // console.log(days); // ["Monday", "Tuesday"]
+    // console.log(months); // ["January", "February", "March", "April"]
+
+    //[기존요소 삭제하지 않고 원하는 위치에 추가]
+    //let months = ["January", "February", "Monday", "Tuesday"];
+    //months.splice(2, 0, "March"); // 두 번째 매개변수가 0이므로 기존 요소 모두 유지
+    //console.log(months); 
+    // ["January", "February", "March", "Monday", "Tuesday"]
+
+
+
+    Array.prototype.remove3 = function(){
+      for (var i = 0; i < this.length; i++) {
+        if ( this[i] === 3 ) {
+          this.splice(i,1);
+        }
+      }
+    };
+
+var arr = [1,2,3,4];
+arr.remove3();
+
+console.log(arr); //[1,2,4]
+
+
+
+
+
+
+	</script> 
+	
+	
+</body>
+</html>
+

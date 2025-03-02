@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="main.css">	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+	<div class="black-bg">
+		<div class="white-bg">
+			<h4>로그인하세요</h4>			
+			<form action="success.html" id="formWrap">
+				<div class="my-3">
+					<input type="text" class="form-control" id="email">
+				</div>
+				<div class="my-3">
+					<input type="password" class="form-control" id="pass">
+				</div>
+				<button type="submit" class="btn btn-primary" id="send">전송</button>
+				<button type="button" class="btn btn-danger" id="close">닫기</button>
+			</form>			
+		</div>
+	</div>  
+
+	<nav class="navbar navbar-light bg-light">
+		<div class="container-fluid">
+			<span class="navbar-brand">Navbar</span>
+			<span class="badge bg-dark"><span>Dark</span> 🔄</span>
+			<button class="navbar-toggler" type="button">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+		</div>
+	</nav>
+
+	<div id="add">sdfsdf</div>
+	<input type="number" id="ky"><button id="year">답은</button>
+
+	<div class="alert alert-danger"><span id="num">5</span>초 이내 구매시 사은품 증정!</div>
+	<button id="clb" onclick="bnrClose()">5초</button>
+	<button onclick="after()">after</button>
+	<button onclick="before()">before</button>
+	<button onclick="prepend()">prepend</button>
+	<button onclick="append()">append</button>
+	<div>위</div>
+	<hr>
+	<div id="container">
+		<p>체크</p>
+	</div>
+	<hr>
+	<div>아래</div>
+
+	<div class="addd">test</div>
+	<script>
+
+	// function addText() {
+	// 	// 추가할 <div> 요소 생성
+	// 	const newElement = document.createElement('div');
+	// 	// <div> 요소 안에 html 요소 추가
+	// 	newElement.innerHTML = '<p>텍스트가 추가되었습니다.</p>';
+	// 	// 생성된 <div> 요소를 추가할 부모요소(container div) 선택
+	// 	const container = document.getElementById('container');
+	// 	// 생성된 <div> 요소를 기존의 container div에 자식 요소로 추가
+	// 	container.appendChild(newElement);
+	// }
+
+		function after() {		
+			$('#container').after('<div>after</div>');			
+		}
+		function before() {		
+			$('#container').before('<div>before</div>');			
+		}
+		function prepend() {		
+			$('#container').prepend('<div>prepend</div>');			
+		}
+		function append() {		
+			$('#container').append('<div>append</div>');			
+		}
+
+		$('.addd').prepend('<div>prepend</div>')
+
+
+
+		function vat(a){
+			return a * 0.1
+		}
+
+		//소수점 체크
+    // toFixed(문자)
+		// 문자를 숫자로 parseFloat(num)
+		function vat(a){
+			var num = (a * 1.1).toFixed(1)
+			return parseFloat(num);
+		}
+
+
+
+
+		var countNum = 5; //5초부터 시작변수
+
+		function bnrClose(){
+			setInterval(() => {
+				countNum--;      
+				if(countNum >= 0){
+					$('#num').html(countNum);        
+				}else{  
+					clearTimeout(countNum);
+					$('.alert').addClass('hide');
+				}
+			}, 1000);
+		}
+		/*
+		var countNum = 5; //5초부터 시작변수
+		setInterval(() => {
+			countNum--;      
+			if(countNum >= 0){
+				document.querySelector('#num').innerHTML = countNum;        
+			}else{
+				clearTimeout(countNum);
+				document.querySelector('.alert').style.display = 'none';
+			}
+		}, 1000);
+		*/
+
+
+		// setTimeout(function(){
+		//     $('.alert').hide();
+		// },2000)
+
+		// setTimeout(함수,2000)
+		// addEventListener(함수)
+
+
+		// setInterval(() => {
+		//   //console.log('sdlkfjlsdkjflksjdfl')
+		// }, 1000);
+
+
+
+		ct = 0;
+		document.getElementById('year').addEventListener('click',function(){      
+			ct++;
+			console.log(ct);
+			var yr = document.getElementById('ky').value;
+			if(yr == 1335){
+				alert('성공');
+			}
+			else if( ct >= 3 && yr != 1335){
+				alert('멍청이');
+			}
+		})
+
+		function aa(a){
+			var rt = 1.2**a;
+			console.log(rt);
+		}
+		aa(10);
+
+		// 커피를 2/3 만큼 리필
+		// 90 > 60 > 40
+		var first = 90;    
+		function sum(){
+			b = first + first*2/3 + first*2/3*2/3;       
+		}
+		sum();
+		
+		
+
+		// (1) 변수에 예금액을 넣으면
+		// (2) 2년 후의 총 예금액을 자동으로 콘솔창에 출력해주는 기능을 자바스크립트로 만들려고하는데
+		// 어떻게 코드를 짜면 될까요? 
+		// var 예금액 = 60000;
+		// var 미래예금액 = 0;
+		//여기에 코드짜보십시오  
+		// (동작예시)
+		// var 예금액이라는 변수에 60000을 집어넣으면 86400 이게 콘솔창에 출력되어야 합니다. (이자 20%가 2번 붙음)
+		// var 예금액이라는 변수에 10000을 집어넣으면 13225 이게 콘솔창에 출력되어야 합니다. (이자 15%가 2번 붙음)
+ 
+		//클릭횟수가 홀수면 LIGHT
+		//클릭횟수가 짝수면 DARK
+		// 기억을 담아둘 변수 생성
+		//var 나이 = 변수에 넣을값 , 잠깐 보관하는 값
+		
+		var count = 0;
+		$('.badge').on('click',function(){
+			count++;
+			console.log(count);
+			if( count % 2 == 1){
+				$('.bg-dark > span').text('Light');
+				$('body').attr('style','background-color:#000');
+			}else if(count % 2 == 0){
+				$('.bg-dark > span').text('Dark');
+				$('body').attr('style','background-color:#fff');
+			}
+		})
+
+
+	</script>
+
+	<ul class="list-group">
+		<li class="list-group-item">An item</li>
+		<li class="list-group-item">A second item</li>
+		<li class="list-group-item">A third item</li>
+		<li class="list-group-item">A fourth item</li>
+		<li class="list-group-item">And a fifth one</li>
+	</ul>
+
+
+	<button id="login">로그인</button>
+	<input type="number" id="ck">	
+</body>
+<!-- <script>
+	document.getElementById('formWrap').addEventListener('submit',function(e){
+		if(document.getElementById('email').value == '' && document.getElementById('pass').value == ''){
+			alert('아이디 / 패스워드를 입력해 주세요.');
+			e.preventDefault();
+		}else	if(document.getElementById('email').value == ''){
+			alert('아이디를 입력해 주세요.');
+			e.preventDefault();
+		}else if(document.getElementById('pass').value == ''){
+			alert('비번을 입력해 주세요.');
+			e.preventDefault();
+		}else if(document.getElementById('pass').value.length < 6){
+			alert('비번을 넘 짧음.');
+			e.preventDefault();
+		}
+	})		
+</script> -->
+<script>
+	$('#login').on('click', function () {
+		$('.black-bg').addClass('show-modal');
+		// $('.black-bg').show();
+	})
+	$('#close').on('click', function () {
+		$('.black-bg').removeClass('show-modal');
+		// $('.black-bg').hide();
+	})
+	$('.navbar-toggler').on('click', function () {
+		$('.list-group').toggleClass('show');
+	})	
+</script>
+<script>
+
+	document.getElementById("ck").addEventListener('change',function(){      
+			if( document.getElementById('ck').value >= 0 && document.getElementById('ck').value <= 100){
+				alert('장나치치 말자');
+			}    
+	})
+
+	function okPoint(a, b){      
+		if( a + b > 120 && a >= 40 && b >= 40){
+			console.log('합격');
+		}else if(a < 40 || b < 40){
+			console.log('불합격');
+		}else{
+			console.log('불합격');
+		}
+	}
+
+	okPoint(70, 70);
+	okPoint(30, 100);
+	okPoint(50, 50);
+
+	function n3(num){
+		if(num % 3 == 0){
+			console.log('박수')
+		}else{
+			console.log('통과')
+		}
+	}
+
+	n3(15);
+
+
+	function n6911(n){
+		//n == 6 이면 박수
+		if(n % 6 == 0){
+			console.log('박수');
+		}else if( n % 9 == 0){
+			console.log('박수', '박수');
+		}else if(n % 11 == 1){
+			console.log('통과');
+		}
+		//n == 9 이면 박수X2
+
+		//n == 11 이면 통과
+	}
+
+//input, change
+document.getElementById('formWrap').addEventListener('submit',function(e){
+	if(document.getElementById('email').value == '' && document.getElementById('pass').value == ''){
+		alert('아이디 / 패스워드를 입력해 주세요.');
+		e.preventDefault();
+	}else	if(document.getElementById('email').value == ''){
+		alert('아이디를 입력해 주세요.');
+		e.preventDefault();
+	}else if(document.getElementById('pass').value == ''){
+		alert('비번을 입력해 주세요.');
+		e.preventDefault();
+	}else if(document.getElementById('pass').value.length < 6 ){
+		alert('비번을 넘 짧음.');
+		e.preventDefault();
+	}
+})	
+</script>
+
+
+<!--
+<script>
+document.getElementById('formWrap').addEventListener('submit',function(e){
+	if(document.getElementById('email').value == '' && document.getElementById('pass').value == ''){
+		alert('아이디 / 패스워드를 입력해 주세요.');
+		e.preventDefault();
+	}else	if(document.getElementById('email').value == ''){
+		alert('아이디를 입력해 주세요.');
+		e.preventDefault();
+	}else if(document.getElementById('pass').value == ''){
+		alert('비번을 입력해 주세요.');
+		e.preventDefault();
+	}else if(document.getElementById('pass').value.length < 6){
+		alert('비번을 넘 짧음.');
+		e.preventDefault();
+	}
+})		
+</script>
+-->
+</html>

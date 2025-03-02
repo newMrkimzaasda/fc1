@@ -1,0 +1,49 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+body {
+	padding: 40px;
+}
+.graph {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	--value1: var(--data1, 0);
+	--value2: var(--data2, 0);
+	--value3: var(--data3, 0);
+	--result2: calc(var(--value1) + var(--value2));
+	--result3: calc(var(--result2) + var(--value3));
+	width: 30vw;
+	aspect-ratio: 1/1;
+	border: 2px solid sandybrown;
+	border-radius: 100%;
+	background: conic-gradient(red var(--value1), orange var(--value1) var(--result2), pink var(--result2) var(--result3), brown var(--result3));
+	&::after {
+		content: attr(data-empty);
+		font-size: 11px;
+		color: gray;
+	}
+	&.donut {
+		&::before {
+			content: "";
+			width: var(--width);
+			aspect-ratio: 1;
+			background-color: #fff;
+			border-radius: 100%;
+		}
+	}
+}
+/*
+:root {}  
+--value1: 20%;
+	--value2: 30%;
+	--value3: 40%;
+	--result2: calc(var(--value1) + var(--value2));
+	--result3: calc(var(--result2) + var(--value3));
+	width: 30vw;
+	aspect-ratio: 1/1;
+	border: 2px solid sandybrown;
+	border-radius: 100%;
+	background: conic-gradient(red var(--value1), orange var(--value1) var(--result2), pink var(--result2) var(--result3), brown var(--result3)); */
+/* background: conic-gradient(red 20%, orange 20% 50%, pink 50% 90%, brown 90% 100%); */

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			function 기계(이름) {
+				this.name = 이름;
+				this.age = 15;
+				this.sayHi = function () {
+					console.log("안녕하세요." + this.name + "입니다.");
+				};
+			}
+
+			기계.prototype.gender = "남";
+			//.toString() > 글자로 변경
+			//내장함수를 왜 쓸수 있을까요?
+
+			var 학생1 = new 기계("Park");
+			var 학생2 = new 기계("Kim");
+
+			var arr = [1, 2, 3];
+			// 위와 동일함. var arr = new Array(1,2,3);
+
+			var obj = {naem: "Kim"};
+			//위의 내용을 참조하면 됨. var obj = new Objcet();
+		</script>
+	</body>
+</html>

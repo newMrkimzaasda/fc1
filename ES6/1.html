@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+
+	<h1>가나다라마바사아자차카타파하</h1>
+
+	<section>
+		<h1>가나다라마바사아자차카타파하</h1>
+	</section>
+	ul li:nth(1 of .link){
+	color:blue;
+	}
+	<article>
+		<h1>가나다라마바사아자차카타파하</h1>
+	</article>
+
+	<div>
+		<h1>가나다라마바사아자차카타파하</h1>
+	</div>
+
+	<ul>
+		<li>1</li>
+		<li class="link">2</li>
+		<li>3</li>
+		<li class="link">4</li>
+		<li>5</li>
+		<li>6</li>
+	</ul>
+</body>
+<script>
+	console.log(this);
+</script>
+<style>
+/*
+section section h1,
+section div h1,
+section article h1,
+
+article section h1,
+arttice div h1, 
+artice artice h1,
+
+div section h1,
+div article h1,
+div div h1
+*/
+
+@supports(text-align:center){
+	/* ▽ 조건부 코드 */
+	body{text-align:center}
+}
+
+/* ▽ @supports 사용할때 대체값이나 기본값을 제공하는것 좋음. */
+header{display:flex}
+@supports(display:grid){
+	/* css가 지원이 되면 display:grid 가 적용이됨. */ 
+	header{display:grid}
+}
+
+/* ▽ @support 표현식을 부정하는 not 연산자도 함께 사용가능. */
+/* border-radius를 지원하지 않은 브라우저 경고*/
+@supports not(border-radius:10px){
+	.old-browser-alert{display:block}
+}
+	
+/* ▽ @support 표현식을 부정하는 not not */
+@supports not( not(border-radius:10px)){
+}
+
+/* border-radius를 지원하지 않은 브라우저 경고*/
+@supports((display:grid) and (display:grid)){	
+	.old-browser-alert{display:block}
+}
+
+h1 {font-size: 46px}
+:is(section, article, div) h1{font-size:36px}
+:is(section, article, div) :is(section, article, div) h1{font-size:36px}
+
+ul li:nth-child(1 of .link){color:blue}
+ul li:nth-child(2 of .link){color:red}
+
+@property --primaryColor {
+	syntax: "<color>";	/* 보유할 값의 유형 */	
+	initial-value: red;		
+	inherits: false;
+	/* 상속여부를 선택할 수 있음. / 참이면 아버지로부터 값을 상속하고 / 거짓이면 상속되지않음. */
+	/* syntax: "<percentage>"; <url>, "transform-function" */
+	/* initial-value:40%, initial-value:url('logo.jpg'), initial-value:translateX:(10px) ;  */
+}
+
+body{background-image:url('dog.jpg')}
+body{background-image:image('dog.jpg#xywh=0,0,100,200')}
+</style>
+
+
+
+
+
+</html>
