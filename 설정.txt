@@ -87,9 +87,37 @@ git branch  //  브랜치 목록 보기
 git branch -a //romotes/origin/master
 git branch signin // 브랜치만들기
 git checkout signin // 브랜치 선택
+git log 체크 head 최신본
 
+//git 브랜치 삭제
+https://github.com/newMrkimzaasda/fc1/settings
+> 상단 메뉴 Settings > lnb 상단 General > Defaut brancdh > master 빼고 모두 삭제 가능
+
+
+// git reset --hard HEAD~1 (백)
+// git reset --hard ORIG_HEAD (되돌리기)
 
 //netlify
+> https://www.netlify.com/
+> https://app.netlify.com/teams/newmrkimzaasda/sites
+> fc1.netlify.app
+>https://app.netlify.com/sites/fc1/configuration/deploys
+> Branches and deploy contexts
+
+
+// clone
+> 새로운환경 시작
+> 저장소 접근 >  code 초록색 git 경로 주소 복사
+> 바탕화면 예)123 폴더 체크
+> vscode > terminal > dir > cd 이름 탭으로 폴더 확인가능
+> cd 12탭 > cd .\123\ 이렇게 표기됨.
+> git clone https://github.com/newMrkimzaasda/fc1.git 
+> 쉘 명령: path 'code' 명령 설치
+> shell command : Install 'code' command in PATH
+> code .
+> code . -r (현재창에서 열수 있음.)
+
+
 
 
 
