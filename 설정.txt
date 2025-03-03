@@ -82,6 +82,13 @@ PS C:\Users\삼성노트북\Desktop\fc1> git remote add origin https://github.co
 PS C:\Users\삼성노트북\Desktop\fc1> git push origin master
 
 
+브랜치 만들기
+git branch  //  브랜치 목록 보기
+git branch -a //romotes/origin/master
+git branch signin // 브랜치만들기
+git checkout signin // 브랜치 선택
+
+
 //netlify
 
 
