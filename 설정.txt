@@ -1,0 +1,153 @@
+Git
+> git --version
+> https://git-scm.com/ Download
+> cmd 버전체크
+
+
+> github.com
+> sign in, sign up(회원가입)
+> usename, Email address, Password 회원가입완료
+> 인증메일 완료 후 가입시
+
+// (참고)https://github.com/ParkYoungWoong
+
+> 쀼우 > newMrkimzaasda/mk  / k0119570@naver.com  / 김철희79!
+> FC1 > start-ftp / k0119570.com/ 김철희79!
+
+
+Git 설정 - 개행 문자 설정
+
+> git init 버전관리하겠다.
+> 자동으로 운영체제에 맞게 변환, --(플래그)
+(IOS)git config --global core.autocrlf input
+(AOS)git config --global core.autocrlf true
+//사용자 정보 - 커밋(버전생성)을 위한 정보 등록
+git config --global user.name 'newMrkimzaasda'
+git config --global user.name 'k0119570.naver.com'
+
+//구성확인
+git config --global --list
+core.autocrlf=true
+user.name=Mrkimzaasda
+user.email=k0119570@naver.com
+> 빠저나올려면 Q
+
+//git status
+> 버전관리상태
+> 빨강글자 표기됨
+
+// Git add .
+> 버전관리 등록
+> 빨강으로 깃에 올릴 파일이 열림.
+
+//git status
+> 다시 한결과 모두 초록색으로 버전관리 하려고함..
+
+// git commit -m '프로젝트 생성'
+> git commit -m 'start project'
+
+// git log
+> commit 된 로그 확인
+
+// github 서비스 가입 후 나의 레퍼지토리 주소 확인
+> 저장소 이름짓고 설명간단히 / 공개, 비공개로 진행 next 
+
+
+// 새롭게 
+git remote add orgin https://github.com/newMrkimzaasda/fc1.git
+//연결할 명령어 입력
+git push origin master
+//원격 저장소 연결 끊어줌.
+git remote remove origin 
+
+
+// git push orgin master
+> master 브랜지로 로그인 되어있으면 로그인 팝업(vscode)
+> 로그인 안되어 있으면 github 로그인 팝업 뜸
+> 모두 인증절차 authorize github 가입시 비번입력함.
+
+//
+
+
+//netlify
+
+
+
+//starbucks
+<!--  open graph protocol -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Starbucks" />
+<meta property="og:title" content="Starbucks Coffee Korea" />
+<meta property="og:description" content="스타벅스는 세계에서 가장 큰 다국적 커피 전문점으로, 64개국에서 총 23,187개의 매점을 운영하고 있습니다." />
+<meta property="og:image" content="./STARBUCKS/images/starbucks_seo.jpg" />
+<meta property="og:url" content="https://starbucks.co.kr" />
+<!--//  open graph protocol -->
+<title>STABUCKS COFFEE KOREA</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" />
+<link rel="stylesheet" href="./STARBUCKS/favicon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+<link rel="stylesheet" href="./STARBUCKS/css/main.css" />
+
+//google material icon
+//lodash.js / https://cdnjs.com/libraries
+//_throttle(함수, 시간)
+//gsap / gsap cdn / https://cdnjs.com/libraries/gsap
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+//swiper 6,7,8
+https://swiperjs.com/
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+//yoube ifram api
+
+// scrollMagic - Libraries -ddn
+https://cdnjs.com/libraries/ScrollMagic
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+// 특수문자
+html entities
+dev.w3.org
+
+// gsap
+https://cdnjs.com/libraries/gsap
+
+
+
+
+
+PARCEL
+1. npm init -y
+2. npm i -D parcel-bundleer
+3. reset.css cdn jsdelivr
+4. ICO converter 만들기 
+
+
+node.js
+> Chrome v8 JavaScript 엔진으로 빌드된 JavaScript 런타임
+> nodejs.org/kr/
+> 짝수, 홀수 
+> 짝수: 안정적, 신뢰도 높음, 홀수: 최신기능능
+1. npm i -g @vue/cli
+2. npm cli
+3. (i)nvm-sh/nvm  / https://github.com/nvm-sh/nvm        
+   > https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating
+   (a)nvm-windows / https://github.com/coreybutler/nvm-windows
+   > https://github.com/coreybutler/nvm-windows/releases
+   Overview > Download Now!
+
+4. nvm install 12.14.1   /  설치버전 체크 nvm ls
+   $ nvm root "C:\Users\%mk%\AppData\Roaming\NVM"
+   c:\Users\mk
+   nvm list available
+   nvm use <version> /  nvm use 18.20.1  / nvm uninstall 12.20.0
+3. npm install -g degit
+3. npx degit ParkYoungWoong/webpack-template-basic vue3-webpack-template f0
+
+
+
+
+
