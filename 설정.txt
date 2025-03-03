@@ -53,8 +53,9 @@ user.email=k0119570@naver.com
 > 저장소 이름짓고 설명간단히 / 공개, 비공개로 진행 next 
 
 
+git remote -v > 설정된 remote 주소  확인
 
-
+git remote set-url origin https://github.com/newMrkimzaasda/fc1.git
 // 새롭게 
 git remote add orgin https://github.com/newMrkimzaasda/fc1.git
 //연결할 명령어 입력
@@ -68,7 +69,17 @@ git remote remove origin
 > 로그인 안되어 있으면 github 로그인 팝업 뜸
 > 모두 인증절차 authorize github 가입시 비번입력함.
 
-//
+// 참고
+PS C:\Users\삼성노트북\Desktop\fc1> git remote remove origin 
+PS C:\Users\삼성노트북\Desktop\fc1> git remote -v
+orgin   https://github.com/newMrkimzaasda/fc1.git (fetch)
+orgin   https://github.com/newMrkimzaasda/fc1.git (push)
+PS C:\Users\삼성노트북\Desktop\fc1> git remote add orgin https://github.com/newMrkimzaasda/fc1.git       
+error: remote orgin already exists.
+PS C:\Users\삼성노트북\Desktop\fc1> git remote remove origin
+error: No such remote: 'origin'
+PS C:\Users\삼성노트북\Desktop\fc1> git remote add origin https://github.com/newMrkimzaasda/fc1.git 
+PS C:\Users\삼성노트북\Desktop\fc1> git push origin master
 
 
 //netlify
